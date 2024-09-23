@@ -5,11 +5,10 @@ from PIL import Image
 
 
 image = Image.open("Imagen.jpg")
-
+image2 = Image.open("Correccion.jpg")
 
 translator = Translator()
 st.title('Detección de sentimientos y correcciones en el texto')
-st.image(image)
 st.subheader("Por favor escribe en el campo de texto la frase que deseas analizar")
 with st.sidebar:
                st.subheader("Polaridad y Subjetividad")
@@ -23,6 +22,7 @@ with st.sidebar:
                  """
                ) 
 
+st.image(image)
 
 with st.expander('Analizar Polaridad y Subjetividad en un texto'):
     text1 = st.text_area('Escribe por favor: ')
@@ -44,6 +44,7 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
         else:
             st.write( 'Es un sentimiento Neutral 😐')
 
+st.image(image2)
 with st.expander('Corrección en inglés'):
        text2 = st.text_area('Escribe por favor: ',key='4')
        if text2:
