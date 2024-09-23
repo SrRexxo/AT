@@ -1,10 +1,15 @@
 import streamlit as st
 from textblob import TextBlob
 from googletrans import Translator
+from PIL import Image
+
+
+image = Image.open("Imagen.jpg")
+
 
 translator = Translator()
-st.title('Uso de textblob')
-
+st.title('Detección de sentimientos y correcciones en el texto')
+st.image(image)
 st.subheader("Por favor escribe en el campo de texto la frase que deseas analizar")
 with st.sidebar:
                st.subheader("Polaridad y Subjetividad")
